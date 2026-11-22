@@ -1,0 +1,2 @@
+0cd5c67fea7cc08bccf863c860cec036ce57ddd6d1578a5974fe1c19c1afa75e  Taurus Search 1.0.dmg
+5009d54ffc81b8d3e56e630dcfb58b97c23a6ee3a3b5991afc84759eaefa731f  Taurus Search 1.0-Xcode.zip
