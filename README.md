@@ -8,7 +8,7 @@
 
 ## 下载与安装
 
-从 [Releases 下载 Taurus Search](https://github.com/BRYWANG06/taurus-search/releases/latest) 中的 `Taurus Search 1.0.dmg`，打开后将 Taurus Search 拖入 Applications。
+从 [Releases 下载 Taurus Search](https://github.com/BRYWANG06/taurus-search/releases/latest) 中的 `Taurus.Search.1.0.dmg`，打开后将 Taurus Search 拖入 Applications。
 
 当前 1.0 使用开发签名，尚未经过 Apple 公证，首次打开可能被 macOS 拦截。也可下载 Xcode 源码包自行编译。
 
@@ -33,7 +33,7 @@
 
 ## 构建
 
-从 Releases 下载 `Taurus Search 1.0-Xcode.zip`，解压后使用 Xcode 打开 `TaurusSearchMac/TaurusSearch.xcodeproj`，选择 TaurusSearch 和 My Mac。部署目标为 macOS 14，玻璃效果在系统支持时使用原生实现。
+从 Releases 下载 `Taurus.Search.1.0-Xcode.zip`，解压后使用 Xcode 打开 `TaurusSearchMac/TaurusSearch.xcodeproj`，选择 TaurusSearch 和 My Mac。部署目标为 macOS 14，玻璃效果在系统支持时使用原生实现。
 
 ```sh
 xcodebuild -project TaurusSearchMac/TaurusSearch.xcodeproj -scheme TaurusSearch -configuration Release -derivedDataPath build ARCHS='arm64 x86_64' ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO build
