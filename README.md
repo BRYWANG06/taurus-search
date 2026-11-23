@@ -1,44 +1,59 @@
-<p align="center"><img src="Taurus-Search-Selected.png" width="120" alt="Taurus Search"></p>
+<p align="center"><img src="Taurus-Search-Selected.png" width="112" alt="Taurus Search"></p>
 
-# Taurus Search
+<h1 align="center">Taurus Search</h1>
+<p align="center">Your files. Fewer distractions.</p>
+<p align="center">Free native file search and app launcher for the macOS menu bar.</p>
+<p align="center"><strong>English</strong> · <a href="README.zh-CN.md">简体中文</a></p>
+<p align="center"><a href="https://github.com/BRYWANG06/taurus-search/releases/latest"><strong>Download for Mac →</strong></a> · <a href="https://github.com/BRYWANG06/taurus-search/issues">Report an issue</a></p>
+<p align="center">macOS 14+ · Apple silicon &amp; Intel · Version 1.0</p>
 
-免费的 macOS 菜单栏文件搜索工具。快捷键唤起，搜索文件、文件夹和应用。
+Press **Option + Space** to find files, folders, and apps. Taurus Search runs in the menu bar, keeps its index on your Mac, and filters recognized logs, caches, and client-managed storage out of results.
 
-**macOS 14 或更新版本 · Apple 芯片与 Intel**
+## Why Taurus Search?
 
-## 下载与安装
+- **A compact native panel.** Glass appearance on supported macOS versions, with a fallback for older systems. Drag it to a convenient location and remember its position.
+- **Apps first.** Matching applications appear before other results, with their actual icons.
+- **Less clutter.** Recognized chat and music client internals stay out of results. An optional setting also hides code files.
+- **An index that follows your files.** Background filesystem updates, additional reconciliation, and checks for missing paths before search results and file opening. Existing indexes survive app updates.
+- **Name-based search.** Search the item's own name rather than listing everything beneath a matching parent folder. Filename-only mode supports literal character fragments. Common Chinese document queries also recognize selected English aliases.
+- **Four interface languages.** English, 简体中文, 繁體中文, and 日本語, plus System Default.
 
-从 [Releases 下载 Taurus Search](https://github.com/BRYWANG06/taurus-search/releases/latest) 中的 `Taurus.Search.1.0.dmg`，打开后将 Taurus Search 拖入 Applications。
+Search covers authorized locations available on the local Mac. Filtering affects search results; it does not delete files.
 
-当前 1.0 使用开发签名，尚未经过 Apple 公证，首次打开可能被 macOS 拦截。也可下载 Xcode 源码包自行编译。
+## Install
 
-## 使用
+1. Download **[Taurus.Search.1.0.dmg](https://github.com/BRYWANG06/taurus-search/releases/download/v1.0/Taurus.Search.1.0.dmg)**.
+2. Open the disk image and drag **Taurus Search** into **Applications**.
+3. Launch it and choose a search folder or **Search This Mac**. Protected locations require permission from the user in System Settings.
 
-- 点击菜单栏放大镜或按 **Option + Space** 打开搜索，Esc 或点击窗口外收起。
-- 右键菜单栏放大镜，设置语言、快捷键、搜索位置和登录时启动。
-- 首次使用选择要搜索的文件夹，或选择搜索这台 Mac；受保护目录需在系统设置中由用户授权。
-- Enter 打开文件，Command + Enter 在 Finder 中显示。
-- 拖动搜索框后可记住位置。
+**Current distribution status:** version 1.0 is development-signed and has not been notarized by Apple. macOS may block the first launch. The complete Xcode project is also available as a [source archive](https://github.com/BRYWANG06/taurus-search/releases/download/v1.0/Taurus.Search.1.0-Xcode.zip). Download checksums are provided in [SHA256SUMS.txt](https://github.com/BRYWANG06/taurus-search/releases/download/v1.0/SHA256SUMS.txt).
 
-## 特点
+## Choose your language
 
-- 原生玻璃界面，菜单栏常驻，不显示 Dock 图标。
-- 应用优先显示，常见文件类型图标预先缓存。
-- 文件变更自动同步索引，更新应用时保留已有索引。
-- 默认搜索名称，支持简历等常用同义词；可切换仅文件名模式。
-- 隐藏日志、缓存以及已识别的聊天与音乐客户端内部存储；可选择隐藏代码文件。
-- 支持简体中文、繁体中文、English、日本語。
+**Right-click the menu bar magnifying glass → Settings → Language.** Choose English, 简体中文, 繁體中文, 日本語, or System Default. The app follows the system language unless you choose one explicitly.
 
-搜索覆盖已授权且本机可访问的位置。过滤只影响搜索结果，不删除文件。索引保存在本机。
+## Everyday controls
 
-## 构建
+| Action | Control |
+| --- | --- |
+| Open or close search | Option + Space, or click the menu bar magnifying glass |
+| Open a result | Enter or double-click |
+| Show in Finder | Command + Enter |
+| Close the panel | Esc, or click outside it |
+| Settings and shortcut customization | Right-click the menu bar magnifying glass |
 
-从 Releases 下载 `Taurus.Search.1.0-Xcode.zip`，解压后使用 Xcode 打开 `TaurusSearchMac/TaurusSearch.xcodeproj`，选择 TaurusSearch 和 My Mac。部署目标为 macOS 14，玻璃效果在系统支持时使用原生实现。
+The app stays out of the Dock. Start at login, filename-only mode, hiding code files, sorting, search locations, and shortcut customization are available from its menu. Check for Updates connects to this repository's releases.
+
+## Feedback
+
+Found a missing result, a noisy file type, or a translation problem? [Open an issue](https://github.com/BRYWANG06/taurus-search/issues) with your macOS version and steps to reproduce. Please redact private file names and paths from screenshots.
+
+If Taurus Search makes finding your files easier, a **Star** helps others discover it.
+
+## Build from source
+
+Download the **Taurus.Search.1.0-Xcode.zip** release asset, unzip it, and open `TaurusSearchMac/TaurusSearch.xcodeproj` in Xcode. Select the TaurusSearch scheme and My Mac. The complete app source and tests are in that archive; GitHub's automatically generated “Source code” archives contain this download repository.
 
 ```sh
 xcodebuild -project TaurusSearchMac/TaurusSearch.xcodeproj -scheme TaurusSearch -configuration Release -derivedDataPath build ARCHS='arm64 x86_64' ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO build
 ```
-
-## 反馈
-
-请在 Issues 中描述问题，并注明 macOS 版本。截图请先遮住私人文件名和路径。
